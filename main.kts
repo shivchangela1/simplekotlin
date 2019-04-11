@@ -4,13 +4,96 @@ println("UW Homework: Simple Kotlin")
 
 // write a "whenFn" that takes an arg of type "Any" and returns a String
 
+fun whenFn(word: Any): Any { 
+    return when (word) { 
+        "Hello" ->  "world"
+        is String  -> "I don't understand"
+        0 -> "zero" 
+        1 -> "one"
+        in 2..10 -> "low number"  
+        is Int -> "a number"
+        else -> "Say what?"
+    }
+}
+
+
 // write an "add" function that takes two Ints, returns an Int, and adds the values
+
+fun add(num1: Int, num2: Int): Int { 
+    return num1 + num2
+}
+
 // write a "sub" function that takes two Ints, returns an Int, and subtracts the values
-// write a "mathOp" function that takes two Ints and a function (that takes two Ints and returns an Int), returns an Int, and applies the passed-in-function to the arguments
 
+fun sub(num1: Int, num2: Int): Int { 
+    return num1 - num2
+}
+
+// write a "mathOp" function that takes two Ints and a function 
+//(that takes two Ints and returns an Int), returns an Int, and applies 
+//the passed-in-function to the arguments
+
+fun mathOp(num1: Int, num2: Int, fun(num1: Int, num2: Int): Int): Int  {
+   
+}
 // write a class "Person" with first name, last name and age
-
+class Person(var firstName: String, val lastName: String, var age: Int) {
+    val debugString = "[Person firstName:" + firstName + " lastName:"+ lastName +" age:" + age + "]"
+}
 // write a class "Money"
+class Money() { 
+    public var money: String = ""
+    // get() = field 
+    // set(value) { 
+    //     field = if (value !=  "USD" || value !=  "EUR" || value != "CAN" value !=  "GBP") { 
+    //          throw IllegalArgumentException("Not valid currency")
+    //     } else { 
+    //         value
+    //     }
+    // }
+    public var amount: Int = 0
+    // get() = field 
+    // set(value) { 
+    //     field = if (value >= 0) { 
+    //         throw IllegalArgumentException("Not valid amount")
+    //     } else { 
+    //         value
+    //     }
+    // }
+
+    class convert(currency: String): Int { 
+        if currency == "USD"  
+            if money == "USD" 
+                return amount;
+             else if money == "GBP"  
+                return amount * 2;
+             else if (money == "EUR")  
+                return amount * (2/3); 
+             else if (money == "CAN")  
+                return amount / 1.25;
+         else if (currency == "EUR")  
+            if (money == "USD")  
+                return amount * (3/2);
+             else if (money == "GBP")  
+                return amount * 3;
+             else if (money == "EUR")  
+                return amount; 
+             else if (money == "CAN")  
+                return amount / 1.25;
+        else if (currency == "CAN") 
+            if money = "USD" 
+                return amount * 1.25;
+         else if (currency == "GBP")  
+            if (money == "USD") 
+                return amount / 2;
+            else if (money == "GBP")  
+                return amount;
+            else if (money == "EUR")  
+                return amount * 3; 
+            
+        
+    }
+}
 
 // ============ DO NOT EDIT BELOW THIS LINE =============
 

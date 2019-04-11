@@ -33,16 +33,15 @@ fun sub(num1: Int, num2: Int): Int {
 //(that takes two Ints and returns an Int), returns an Int, and applies 
 //the passed-in-function to the arguments
 
-fun mathOp(num1: Int, num2: Int, fun(num1: Int, num2: Int): Int): Int  {
-   
+fun mathOp(num1: Int, num2: Int, func: (num1: Int, num2: Int) -> Int): Int  {
+   return func(num1, num2)
 }
 // write a class "Person" with first name, last name and age
 class Person(var firstName: String, val lastName: String, var age: Int) {
     val debugString = "[Person firstName:" + firstName + " lastName:"+ lastName +" age:" + age + "]"
 }
 // write a class "Money"
-class Money() { 
-    public var money: String = ""
+class Money(var money: String, var amount: Int) { 
     // get() = field 
     // set(value) { 
     //     field = if (value !=  "USD" || value !=  "EUR" || value != "CAN" value !=  "GBP") { 
@@ -51,7 +50,6 @@ class Money() {
     //         value
     //     }
     // }
-    public var amount: Int = 0
     // get() = field 
     // set(value) { 
     //     field = if (value >= 0) { 
@@ -90,9 +88,9 @@ class Money() {
                 return amount;
             else if (money == "EUR")  
                 return amount * 3; 
-            
-        
     }
+
+    val sum = Money() 
 }
 
 // ============ DO NOT EDIT BELOW THIS LINE =============
